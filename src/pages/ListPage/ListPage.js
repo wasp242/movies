@@ -4,9 +4,10 @@ import { useParams } from 'react-router';
 
 export default function ListPage (props) {
     const params = useParams()
+    console.log(params)
     const [movies, setMovies] = useState([])
     useEffect(()=>{
-        const { id } = props.match.params
+        const { id } = params
         fetch(`https://acb-api.algoritmika.org/api/movies/list/${id}`)
         .then(response =>response.json())
         .then(data => {
