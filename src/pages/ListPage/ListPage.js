@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 
 export default function ListPage (props) {
     const params = useParams()
-    console.log(params)
     const [movies, setMovies] = useState([])
     useEffect(()=>{
         const { id } = params
