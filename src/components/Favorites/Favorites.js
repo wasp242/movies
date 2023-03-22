@@ -16,11 +16,8 @@ export default function Favorites() {
         state.subscribe(()=>{
             const newFavMovies = state.getState().favourites
             setFavMovies(newFavMovies)
-            if (newFavMovies.length > 0) {
-                setFavsNotEmpty(true);
-            } else {
-                setFavsNotEmpty(false);
-            }
+            newFavMovies.lengths > 0 ? setFavsNotEmpty(true) : setFavsNotEmpty(false); 
+        
         })
     },[])
     const removeFromFav = (imdbID) =>{
@@ -30,13 +27,10 @@ export default function Favorites() {
             imdbID
         }
     })
-    }
-
-    
+    } 
     const saveList = () => {
         setIsSaved(true)
         setIsLoaded(true)
-        //console.log(isLoaded)
         const obj = {
             title: `${value}`,
             movies: [favMovies]
@@ -51,7 +45,6 @@ export default function Favorites() {
             .then(data => {
                 setId(data.id)
                 setIsLoaded(true)
-                //console.log(isLoaded)
             })
     }  
     return (
