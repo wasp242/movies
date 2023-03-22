@@ -2,6 +2,8 @@
     box-sizing: border-box;
     border: 1px solid rgba(0, 8, 7);
     padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .favorites__name {
@@ -15,6 +17,9 @@
 
 .favorites__list {
     margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .favorites__save {
@@ -30,4 +35,27 @@
     cursor: pointer;
     opacity: 0.9;
     transition: all 0.2s linear;
+}
+.favorites__save:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.favorites__list-item{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+}
+.btn_favs{
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+
+}
+.favourites__open-list{
+    font-size: 20px;
 }

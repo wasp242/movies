@@ -7,6 +7,7 @@ import './reset.css';
 import './common.css';
 
 export default function App(){
+
   return (
     <div className="app">
       <Route path="/" exact component={MainPage} />
