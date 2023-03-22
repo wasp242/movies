@@ -16,7 +16,7 @@ export default function Favorites() {
         state.subscribe(()=>{
             const newFavMovies = state.getState().favourites
             setFavMovies(newFavMovies)
-            newFavMovies.length > 0 ? setFavsNotEmpty(true) : setFavsNotEmpty(false); 
+            setFavsNotEmpty(!!newFavMovies.length)
         })
     },[])
     const removeFromFav = (imdbID) =>{
